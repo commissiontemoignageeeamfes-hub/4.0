@@ -1026,10 +1026,10 @@ body {
 .action-menu-btn:hover { background: var(--c5); border-color: var(--c2); color: var(--c1); }
 .action-menu-btn.open { background: var(--c5); border-color: var(--c2); color: var(--c1); }
 .action-menu-dropdown {
-  display: none; position: absolute; right: 0; top: 38px; z-index: 100;
+  display: none; position: fixed; z-index: 9999;
   background: var(--surface); border: 1px solid var(--bo);
-  border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.14);
-  min-width: 150px; overflow: hidden;
+  border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  min-width: 160px; overflow: hidden;
   animation: fadeIn .15s ease;
 }
 .action-menu-dropdown.show { display: block; }
@@ -6395,6 +6395,11 @@ function toggleActionMenu(btn) {
   const isOpen = dropdown.classList.contains('show');
   closeAllMenus();
   if (!isOpen) {
+    const rect = btn.getBoundingClientRect();
+    dropdown.style.top  = (rect.bottom + 6) + 'px';
+    const rightEdge = window.innerWidth - rect.right;
+    dropdown.style.right = rightEdge + 'px';
+    dropdown.style.left  = 'auto';
     dropdown.classList.add('show');
     btn.classList.add('open');
   }
