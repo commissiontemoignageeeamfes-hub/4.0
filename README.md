@@ -1947,72 +1947,72 @@ body .animate, body .spinner, body [class*="anim"] {
       </div>
     </div>
 
-    <!-- MODAL MODIFIER ÉVANGÉLISTE -->
-    <div class="modal-overlay" id="modal-ev-edit">
-      <div class="modal">
-        <div class="modal-head">
-          <h2>✏️ Modifier l'évangéliste</h2>
-          <button class="modal-close" onclick="closeModal('modal-ev-edit')">✕</button>
-        </div>
-        <div class="modal-body">
-          <div class="edit-field-row">
-            <div class="edit-field"><label>Nom complet</label><input type="text" id="ee-nom" placeholder="Nom Prénom"></div>
-            <div class="edit-field"><label>N° WhatsApp</label><input type="tel" id="ee-tel" placeholder="+212 6xx xxx xxx"></div>
-          </div>
-          <div class="edit-field-row">
-            <div class="edit-field"><label>Nationalité</label><input type="text" id="ee-nat" placeholder="ex: Ivoirienne"></div>
-            <div class="edit-field"><label>Quartier / Zone</label><input type="text" id="ee-zone" placeholder="ex: Saiss"></div>
-          </div>
-          <div class="edit-field-row">
-            <div class="edit-field"><label>École / Lieu de travail</label><input type="text" id="ee-ecole" placeholder="ex: ENSA Fès"></div>
-            <div class="edit-field">
-              <label>Situation</label>
-              <select id="ee-situation" onchange="toggleAutreField('ee-situation','ee-sit-autre')" style="-webkit-appearance:none;appearance:none;">
-                <option value="">— Situation —</option>
-                <option value="etudiant">🎓 Étudiant(e)</option>
-                <option value="travail">💼 En activité</option>
-                <option value="autre">Autre</option>
-              </select>
-              <input type="text" id="ee-sit-autre" placeholder="Précisez…"
-                style="display:none;margin-top:6px;background:var(--bg2);border:1.5px solid var(--c4);border-radius:8px;padding:8px 11px;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;width:100%;color:var(--tx);">
-            </div>
-          </div>
-          <div class="edit-field-row">
-            <div class="edit-field">
-              <label>Zone principale</label>
-              <select id="ee-equipe" style="-webkit-appearance:none;appearance:none;background:var(--surface);border:1.5px solid var(--bo);border-radius:8px;padding:9px 11px;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;width:100%;color:var(--tx);">
-                <option value="">— Zone principale —</option>
-              </select>
-            </div>
-            <div class="edit-field"><label>Email</label><input type="email" id="ee-email" placeholder="ex: jean@gmail.com"></div>
-          </div>
-          <div class="edit-field-row full">
-            <div class="edit-field">
-              <label>Zones secondaires <span style="font-size:10px;color:var(--mu);font-weight:400;text-transform:none;">(peut intervenir aussi dans ces zones)</span></label>
-              <div id="ee-zones-sec" style="display:flex;flex-wrap:wrap;gap:6px;padding:8px;background:var(--bg2);border:1.5px solid var(--bo);border-radius:8px;min-height:44px;">
-                <span style="font-size:12px;color:var(--mu);font-style:italic;align-self:center;">Chargement…</span>
-              </div>
-            </div>
-          </div>
-          <div class="edit-field-row">
-            <div class="edit-field">
-              <label>Code unique</label>
-              <input type="text" id="ee-code" placeholder="EV001" style="text-transform:uppercase;letter-spacing:.1em;" disabled>
-              <div style="font-size:10px;color:var(--mu);margin-top:3px;">Le code ne peut pas être modifié</div>
-            </div>
-          </div>
-          <div class="edit-field-row full">
-            <div class="edit-field">
-              <label>Notes / Informations</label>
-              <textarea id="ee-notes" placeholder="Notes complémentaires..." style="min-height:60px;resize:vertical;background:var(--bg2);border:1.5px solid var(--bo);border-radius:10px;padding:10px 12px;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;width:100%;"></textarea>
-            </div>
-          </div>
-          <input type="hidden" id="ee-id">
-          <button class="btn btn-primary btn-full" onclick="doSaveEvEdit()" style="margin-top:10px;">💾 Enregistrer les modifications</button>
+  </div>
+</div>
+
+<!-- Modal modifier évangéliste (placé hors du tabcontent pour rester accessible) -->
+<div class="modal-overlay" id="modal-ev-edit">
+  <div class="modal">
+    <div class="modal-head">
+      <h2>✏️ Modifier l'évangéliste</h2>
+      <button class="modal-close" onclick="closeModal('modal-ev-edit')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="edit-field-row">
+        <div class="edit-field"><label>Nom complet</label><input type="text" id="ee-nom" placeholder="Nom Prénom"></div>
+        <div class="edit-field"><label>N° WhatsApp</label><input type="tel" id="ee-tel" placeholder="+212 6xx xxx xxx"></div>
+      </div>
+      <div class="edit-field-row">
+        <div class="edit-field"><label>Nationalité</label><input type="text" id="ee-nat" placeholder="ex: Ivoirienne"></div>
+        <div class="edit-field"><label>Quartier / Zone</label><input type="text" id="ee-zone" placeholder="ex: Saiss"></div>
+      </div>
+      <div class="edit-field-row">
+        <div class="edit-field"><label>École / Lieu de travail</label><input type="text" id="ee-ecole" placeholder="ex: ENSA Fès"></div>
+        <div class="edit-field">
+          <label>Situation</label>
+          <select id="ee-situation" onchange="toggleAutreField('ee-situation','ee-sit-autre')" style="-webkit-appearance:none;appearance:none;">
+            <option value="">— Situation —</option>
+            <option value="etudiant">🎓 Étudiant(e)</option>
+            <option value="travail">💼 En activité</option>
+            <option value="autre">Autre</option>
+          </select>
+          <input type="text" id="ee-sit-autre" placeholder="Précisez…"
+            style="display:none;margin-top:6px;background:var(--bg2);border:1.5px solid var(--c4);border-radius:8px;padding:8px 11px;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;width:100%;color:var(--tx);">
         </div>
       </div>
+      <div class="edit-field-row">
+        <div class="edit-field">
+          <label>Zone principale</label>
+          <select id="ee-equipe" style="-webkit-appearance:none;appearance:none;background:var(--surface);border:1.5px solid var(--bo);border-radius:8px;padding:9px 11px;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;width:100%;color:var(--tx);">
+            <option value="">— Zone principale —</option>
+          </select>
+        </div>
+        <div class="edit-field"><label>Email</label><input type="email" id="ee-email" placeholder="ex: jean@gmail.com"></div>
+      </div>
+      <div class="edit-field-row full">
+        <div class="edit-field">
+          <label>Zones secondaires <span style="font-size:10px;color:var(--mu);font-weight:400;text-transform:none;">(peut intervenir aussi dans ces zones)</span></label>
+          <div id="ee-zones-sec" style="display:flex;flex-wrap:wrap;gap:6px;padding:8px;background:var(--bg2);border:1.5px solid var(--bo);border-radius:8px;min-height:44px;">
+            <span style="font-size:12px;color:var(--mu);font-style:italic;align-self:center;">Chargement…</span>
+          </div>
+        </div>
+      </div>
+      <div class="edit-field-row">
+        <div class="edit-field">
+          <label>Code unique</label>
+          <input type="text" id="ee-code" placeholder="EV001" style="text-transform:uppercase;letter-spacing:.1em;" disabled>
+          <div style="font-size:10px;color:var(--mu);margin-top:3px;">Le code ne peut pas être modifié</div>
+        </div>
+      </div>
+      <div class="edit-field-row full">
+        <div class="edit-field">
+          <label>Notes / Informations</label>
+          <textarea id="ee-notes" placeholder="Notes complémentaires..." style="min-height:60px;resize:vertical;background:var(--bg2);border:1.5px solid var(--bo);border-radius:10px;padding:10px 12px;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;width:100%;"></textarea>
+        </div>
+      </div>
+      <input type="hidden" id="ee-id">
+      <button class="btn btn-primary btn-full" onclick="doSaveEvEdit()" style="margin-top:10px;">💾 Enregistrer les modifications</button>
     </div>
-
   </div>
 </div>
 
